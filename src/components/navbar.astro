@@ -1,0 +1,53 @@
+---
+import Button from "./button.astro";
+import Icon from "./icon.astro";
+import Logo from "./logo.astro";
+import Sosmed from "./sosmed.astro";
+
+
+---
+
+<nav x-data="{ isOpen: false }" id="navbar" class=" fixed top-0 z-50 bg-white w-full">
+    <div class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
+        <div class="flex items-center justify-between">
+            <Logo primary="w-12" href="/" scond="text-2xl" />
+            <div class="flex md:hidden">
+                <button x-cloak @click="isOpen = !isOpen" type="button" class="text-gray-500 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
+                    <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                    </svg>
+                    <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" class="absolute inset-x-0 z-20 h-screen md:h-max w-full max-[768px]:bg-white max-[768px]:text-blue px-6 py-4 transition-all duration-300 ease-in-out md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center">
+            <div class="flex flex-col md:flex-row md:mx-6 *:border-b *:border-gray-200 *:md:border-0 *:py-3 mb-12 md:mb-0 *:md:mx-4 *:md:my-0 hover:*:text-orange">
+                <a href="/">Home</a>
+                <a href="/blog">Blog</a>
+                <a href="/about">About</a>
+                <a href="/service">Service</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <Button primary="w-10 p-3 text-orange fill-orange bg-gray-200" second="p-3 !text-lg" />
+        </div>
+    </div>
+</nav>
+
+<script>
+    const navbar: HTMLElement | null = document.getElementById('navbar');
+
+if (navbar) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      navbar.classList.add('bg-blue', 'text-white', 'border-b');
+      navbar.classList.remove('bg-white');
+    } else {
+      navbar.classList.remove('bg-blue', 'text-white');
+      navbar.classList.add('bg-white');
+    }
+  });
+}
+
+  </script>

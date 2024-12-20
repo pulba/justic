@@ -1,0 +1,247 @@
+---
+import Page from "../layouts/page.astro";
+import Button from "../components/button.astro";
+import Icon from "../components/icon.astro";
+import { Image } from "astro:assets";
+import justic1 from "../assets/justic20.webp"
+import justic2 from "../assets/justic19.webp"
+import justic3 from "../assets/justic18.webp"
+import justic4 from "../assets/justic17.webp"
+import justic6 from "../assets/justic11.webp"
+import justic7 from "../assets/justic7.webp"
+import justic8 from "../assets/justic2.webp"
+import Price from "../components/price.astro";
+
+---
+
+<Page title="Our Services">
+    <section>
+        <div class="mx-auto">
+            <div class="flex flex-col lg:flex-row *:w-full *:min-h-screen">
+				<div class="relative lg:-me-24 z-20 bg-gray-50 px-12 py-24 flex flex-col items-end text-end space-y-8 lg:space-y-12">
+                    <Icon primary="bg-orange text-white p-5 absolute top-0 right-0 w-24" path="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z" />
+					<p class="font-bold text-orange">ABOUT Justic FAMILY LAW
+					</p>
+					<h4 class="font-ledger text-blue text-4xl md:text-5xl">
+						Advice On A Full Range Of <span class="text-4xl text-orange">Family Law  </span>Matters
+					</h4>
+					<p class="font-sans text-blue">Family law is all we do, so whatever your situation is, it will be familiar to us. Our UK-wide team combines expertise with exceptional care and empathy, delivered locally to you. We understand how difficult any problem arising within a family can be, especially when they take on a legal dimension. We know this, we understand.</p>
+					<Button primary="w-16 p-5 text-orange fill-orange bg-blue" second="p-5" />
+				</div>
+                <div class="relative bg-blue lg:-mt-24">
+					<div class="px-12 py-24 lg:mt-24 lg:pl-36 lg:pr-12 space-y-8">
+						<div class="flex flex-row gap-4 group">
+							<Icon primary="w-24 text-orange group-hover:text-white" path="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672Zm-7.518-.267A8.25 8.25 0 1 1 20.25 10.5M8.288 14.212A5.25 5.25 0 1 1 17.25 10.5" />
+							<div class="">
+								<h6 class="font-bold text-xl text-orange mb-2">EXPERIENCED SOLUTIONS</h6>
+								<p class="font-ledger text-white text-lg">We ensure you have a solution with the right experience and approach to you.
+								</p>
+							</div>
+						</div>
+						<div class="flex flex-row gap-4 group">
+							<Icon primary="w-24 text-orange group-hover:text-white" path="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+							<div class="">
+								<h6 class="font-bold text-xl text-orange mb-2">ALWAYS LISTEN</h6>
+								<p class="font-ledger text-white text-lg">Your solicitor will develop understanding of your needs and the approach you want to take.
+								</p>
+							</div>
+						</div>
+						<div class="flex flex-row gap-4 group">
+							<Icon primary="w-24 text-orange group-hover:text-white" path="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0 1 18 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3 1.5 1.5 3-3.75" />
+							<div class="">
+								<h6 class="font-bold text-xl text-orange mb-2">ALWAYS CLEAR</h6>
+								<p class="font-ledger text-white text-lg">We will provide a detailed cost estimate before you agree to proceed with your case.
+								</p>
+							</div>
+						</div>
+						<div class="flex flex-row gap-4 group">
+							<Icon primary="w-24 text-orange group-hover:text-white" path="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+							<div class="">
+								<h6 class="font-bold text-xl text-orange mb-2">RIGHT APPROACH</h6>
+								<p class="font-ledger text-white text-lg">We will identify the best way to achieve your goals that are realistic and attainable.
+								</p>
+							</div>
+						</div>
+						<div class="flex flex-row gap-4 group">
+							<Icon primary="w-24 text-orange group-hover:text-white" path="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+							<div class="">
+								<h6 class="font-bold text-xl text-orange mb-2">EXCEPTIONAL CARE</h6>
+								<p class="font-ledger text-white text-lg">We deliver on our promises and celebrate our successes, we are friendly and caring.
+								</p>
+							</div>
+						</div>
+					</div>
+                </div>
+            </div>
+        </div>
+    </section>
+	<section>
+		<div class="relative overflow-hidden pb-20">
+			<div class="md:flex *:w-full *:min-h-screen">
+				<div class="relative">
+					<div class="md:absolute w-full bottom-0 left-12 z-10">
+						<Icon primary="bg-orange text-white p-5 absolute top-0 left-0 w-24" path="M16.5 3.75V16.5L12 14.25 7.5 16.5V3.75m9 0H18A2.25 2.25 0 0 1 20.25 6v12A2.25 2.25 0 0 1 18 20.25H6A2.25 2.25 0 0 1 3.75 18V6A2.25 2.25 0 0 1 6 3.75h1.5m9 0h-9" />
+						<div class="bg-gray-50 mt-24 px-6 py-12 md:px-16 ">
+							<h5 class="font-ledger text-3xl md:text-4xl">Justic Practice Areas</h5>
+							<ul class="flex flex-col gap-6 items-start mt-12 font-bold transition-all ease-linear duration-500 *:group *:flex *:gap-2 *:items-center *:justify-center hover:*:text-orange *:text-gray-950 *:transition-all *:ease-linear *:duration-200">
+								<li class="!text-orange hover:!text-gray-950">
+									FAMILY BUSINESSES & SELF-EMPLOYED
+									<Icon primary="w-8 text-orange group-hover:!text-gray-950" path="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+								</li>
+								<li class=""><span class="font-bold text-xl group-hover:hidden">-</span>OUT OF COURT SETTLEMENTS
+									<Icon primary="hidden group-hover:block w-8 group-hover:text-orange text-gray-950" path="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+								</li>
+								<li class="">HIGH NET WORTH INDIVIDUALS
+									<Icon primary="w-8 group-hover:text-orange text-gray-950" path="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+								</li>
+								<li class="">INTERNATIONAL DIVORCE CASES
+									<Icon primary="w-8 group-hover:text-orange text-gray-950" path="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+								</li>
+								<li class="">FAMILY BUSINESSES & SELF-EMPLOYED
+									<Icon primary="w-8 group-hover:text-orange text-gray-950" path="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+								</li>
+								<li class="">CIVIL PARTNERSHIPS
+									<Icon primary="w-8 group-hover:text-orange text-gray-950" path="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+								</li>
+								<li class="">HIGH PROFILE SPORTS PLAYERS
+									<Icon primary="w-8 group-hover:text-orange text-gray-950" path="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="lg:order-first relative lg:-me-36 bg-cover bg-center" style={`background-image: url('${justic1.src}')`}></div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="container relative px-6 py-20 mx-auto">
+			<div class="grid grid-cols-1 sm:grid-col-2 md:grid-cols-2 lg:grid-cols-3 gap-6 *:w-full">
+				<div class="relative p-6 text-white bg-blue bg-cover bg-center h-80" style={`background-image: url('${justic2.src}')`}>
+					<div class="absolute bottom-0 right-0 flex">
+						<div class="bg-orange p-5 w-20">
+							<Icon primary="" path="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+						</div>
+						<div class="bg-gray-50 p-5 right-0">
+							<h4 class="font-ledger text-blue text-2xl">Civil Partnerships</h4>
+						</div>
+					</div>
+				</div>
+				<div class="relative p-6 text-white bg-blue">
+					<div class="bg-orange p-5 absolute top-0 right-0 w-20">
+						<Icon primary="" path="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" />
+					</div>
+					<div class="mt-16 px-6 relative">
+						<h3 class="font-ledger text-3xl">Financial Settlements</h3>
+						<p class="font-sans text-lg">Protect your wealth and ensure you receive a fair settlement. Our expert divorce lawyers will be by your side.</p>
+						<div class="relative flex items-center text-orange py-5 mt-6 w-1/2">
+							<div class="flex-grow border border-t border-orange"></div>
+							<span class="flex-shrink mx-4 font-bold">READ MORE</span>
+						</div>
+					</div>
+				</div>
+				<div class="relative p-6 text-white bg-blue bg-cover bg-center h-80" style={`background-image: url('${justic3.src}')`}>
+					<div class="absolute bottom-0 right-0 flex">
+						<div class="bg-orange p-5 w-20">
+							<Icon primary="" path="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+						</div>
+						<div class="bg-gray-50 p-5 right-0">
+							<h4 class="font-ledger text-blue text-2xl">Disputes and Settlements</h4>
+						</div>
+					</div>
+				</div>
+				<div class="relative p-6 text-white bg-blue">
+					<div class="bg-orange p-5 absolute top-0 right-0 w-20">
+						<Icon primary="" path="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
+					</div>
+					<div class="mt-16 px-6 relative">
+						<h3 class="font-ledger text-3xl">Divorce</h3>
+						<p class="font-sans text-lg">International families can face particular difficulties if the relationship between the parents break down.</p>
+						<div class="relative flex items-center text-orange py-5 mt-6 w-1/2">
+							<div class="flex-grow border border-t border-orange"></div>
+							<span class="flex-shrink mx-4 font-bold">READ MORE</span>
+						</div>
+					</div>
+				</div>
+				<div class="relative p-6 text-white bg-blue bg-cover bg-center h-80" style={`background-image: url('${justic4.src}')`}>
+					<div class="absolute bottom-0 right-0 flex">
+						<div class="bg-orange p-5 w-20">
+							<Icon primary="" path="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+						</div>
+						<div class="bg-gray-50 p-5 right-0">
+							<h4 class="font-ledger text-blue text-2xl">Child Arrangement Orders</h4>
+						</div>
+					</div>
+				</div>
+				<div class="relative p-6 text-white bg-blue">
+					<div class="bg-orange p-5 absolute top-0 right-0 w-20">
+						<Icon primary="" path="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" />
+					</div>
+					<div class="mt-16 px-6 relative">
+						<h3 class="font-ledger text-3xl">Financial Settlements</h3>
+						<p class="font-sans text-lg">Protect your wealth and ensure you receive a fair settlement. Our expert divorce lawyers will be by your side.</p>
+						<div class="relative flex items-center text-orange py-5 mt-6 w-1/2">
+							<div class="flex-grow border border-t border-orange"></div>
+							<span class="flex-shrink mx-4 font-bold">READ MORE</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="container px-6 py-12 mx-auto">
+			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-12">
+				<div class="bg-blue">
+					<Image src={justic6} alt="justic" class="aspect-video object-center object-cover"/>
+					<div class="text-white relative">
+						<div class="bg-blue -translate-y-16 ml-12">
+							<Icon primary="w-16 bg-orange p-2 text-white" path="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" />
+						</div>
+						<div class="-translate-y-6 bg-blue px-8 pb-6">
+							<h6 class="font-ledger text-3xl mb-2 hover:text-orange">Financial <span class="text-orange">Settlements</span></h6>
+							<p class="text-md">Leverage agile frameworks to provide a robust synopsis for high level iterative approaches to corporate strategy.</p>
+						</div>
+					</div>
+				</div>
+				<div class="bg-blue">
+					<Image src={justic7} alt="justic" class="aspect-video object-center object-cover"/>
+					<div class="text-white relative">
+						<div class="bg-blue -translate-y-16 ml-12">
+							<Icon primary="w-16 bg-orange p-2 text-white" path="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+						</div>
+						<div class="-translate-y-6 bg-blue px-8 pb-6">
+							<h6 class="font-ledger text-3xl mb-2 hover:text-orange">Family  <span class="text-orange">Law</span></h6>
+							<p class="text-md">Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
+						</div>
+					</div>
+				</div>
+				<div class="bg-blue">
+					<Image src={justic8} alt="justic" class="aspect-video object-center object-cover"/>
+					<div class="text-white relative">
+						<div class="bg-blue -translate-y-16 ml-12">
+							<Icon primary="w-16 bg-orange p-2 text-white" path="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+						</div>
+						<div class="-translate-y-6 bg-blue px-8 pb-6">
+							<h6 class="font-ledger text-3xl mb-2 hover:text-orange">Marriage  <span class="text-orange">Agreements</span></h6>
+							<p class="text-md">Bring to the table win-win survival strategies to ensure proactive work. At the end of the day, going forward.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="container px-6 py-20 mx-auto">
+			<div class="text-center max-w-screen-md mx-auto">
+				<h4 class="text-3xl md:text-4xl font-ledger text-blue">The virtue of <span class="text-orange">justice</span> consists in <span class="text-orange">moderation</span>, as regulated by <span class="text-orange">wisdom.</span></h4>
+				<p class="text-xl text-orange mt-5">ARISTOTLE</p>
+			</div>
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+				<Price primary="bg-blue text-white" heading="BASIC RATE FROM" price="250" list="The client and lawyer will agree on the hourly rate before getting started with the case." />
+				<Price primary="bg-gray-200 text-blue" heading="STANDARD HOUR RATE" price="500" list="A flat fee is offered if your case is relatively simple or routine such as a will or an uncontested divorce." />
+				<Price primary="bg-orange text-white" heading="PREMIUM HOUR RATE" price="750" list="We will formally update you on progress of costs, both incurred and anticipated, on a monthly basis." />
+			</div>
+		</div>
+	</section>
+</Page>

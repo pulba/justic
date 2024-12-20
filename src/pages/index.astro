@@ -1,0 +1,446 @@
+---
+import Home from "../layouts/home.astro";
+import Postcard from "../components/postcard.astro";
+import { getImage, Image } from "astro:assets"
+import cover from "../assets/justic17.webp"
+import justic1 from "../assets/justic19.webp"
+import justic2 from "../assets/justic20.webp"
+import justic3 from "../assets/justic21.webp"
+import justic4 from "../assets/justic9.webp"
+import justic5 from "../assets/justic13.webp"
+import justic6 from "../assets/justic11.webp"
+import justic7 from "../assets/justic7.webp"
+import justic8 from "../assets/justic2.webp"
+import justic9 from "../assets/justic23.webp"
+import justic10 from "../assets/justic22.webp"
+import justic11 from "../assets/justic14.webp"
+import justic12 from "../assets/justic15.webp"
+import justic13 from "../assets/justic1.webp"
+import justic14 from "../assets/justic5.webp"
+import Icon from "../components/icon.astro";
+import Teamcard from "../components/teamcard.astro";
+import Button from "../components/button.astro";
+import { formatBlogPosts } from "../utils/helpers";
+
+interface BlogPost {
+  frontmatter: {
+    title: string;
+    date: string;
+    [key: string]: any;
+  };
+  url: string;
+}
+
+const optimizedBackground = await getImage({ src: cover, format: "webp" });
+const matches = await import.meta.glob('./posts/*.md', { eager: true });
+const posts = Object.values(matches);
+const formatPosts: BlogPost[] = formatBlogPosts(posts);
+---
+
+<Home>
+	<section x-show="activeTab === 'home'" class="relative overflow-hidden bg-top bg-cover before:content-[''] before:absolute before:h-full before:w-full before:bg-black/40" style={`background-image: url('${optimizedBackground.src}')`}>
+		<div class="container relative px-6">
+			<div class="h-screen max-w-screen-md mx-auto flex flex-col items-center justify-center">
+				<h1 class="font-ledger text-center text-4xl md:text-6xl text-white">Special <span class="text-orange">Approach, Dedicated</span> Attorneys</h1>
+				<div class="relative flex items-center py-5 mt-6 w-1/2">
+					<div class="flex-grow border border-t border-orange"></div>
+					<span class="flex-shrink mx-4 font-bold text-white">VIEW MORE</span>
+					<div class="flex-grow border border-t border-orange"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="container relative px-6 mx-auto">
+			<div class="flex flex-col lg:flex-row gap-6 *:w-full -translate-y-24">
+				<div class="relative p-6 text-white bg-blue">
+					<div class="bg-orange p-5 absolute top-0 right-0 w-20 *:border-2">
+						<Icon primary="" path="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
+					</div>
+					<div class="mt-16 px-6 relative">
+						<h3 class="font-ledger text-3xl">Divorce</h3>
+						<p class="font-sans text-lg">International families can face particular difficulties if the relationship between the parents break down.</p>
+						<div class="relative flex items-center text-amber-600 py-5 mt-6 w-1/2">
+							<div class="flex-grow border border-t border-amber-600"></div>
+							<span class="flex-shrink mx-4 font-bold">READ MORE</span>
+						</div>
+					</div>
+				</div>
+				<div class="relative p-6 text-white bg-blue bg-cover bg-center h-80" style={`background-image: url('${justic1.src}')`}>
+					<div class="absolute bottom-0 right-0 flex">
+						<div class="bg-orange p-5 w-20 *:border-2">
+							<Icon primary="" path="M7.5 7.5h-.75A2.25 2.25 0 0 0 4.5 9.75v7.5a2.25 2.25 0 0 0 2.25 2.25h7.5a2.25 2.25 0 0 0 2.25-2.25v-7.5a2.25 2.25 0 0 0-2.25-2.25h-.75m-6 3.75 3 3m0 0 3-3m-3 3V1.5m6 9h.75a2.25 2.25 0 0 1 2.25 2.25v7.5a2.25 2.25 0 0 1-2.25 2.25h-7.5a2.25 2.25 0 0 1-2.25-2.25v-.75" />
+						</div>
+						<div class="bg-gray-50 p-5 right-0">
+							<h4 class="font-ledger text-blue text-2xl">Disputes and Settlements</h4>
+						</div>
+					</div>
+				</div>
+				<div class="relative p-6 text-white bg-blue">
+					<div class="bg-orange p-5 absolute top-0 right-0 w-20 *:border-2">
+						<Icon primary="" path="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+					</div>
+					<div class="mt-16 px-6 relative">
+						<h3 class="font-ledger text-3xl">Wills, Trusts & Probate</h3>
+						<p class="font-sans text-lg">It is worth understanding the options of distributing pensions before deciding what is best for you.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="container px-6 mx-auto">
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 *:p-4">
+				<div class="space-y-4">
+					<h4 class="font-ledger text-blue text-3xl md:text-4xl">
+						Family Lawyers <br> <span class="text-4xl text-orange">And Divorce Solicitors</span>
+					</h4>
+					<p class="font-sans text-blue">We combine expertise with exceptional care and empathy delivered locally to you. Family law is all we do, so whatever your situation, it will be familiar to us. With a genuine focus on client care. Grow organically the holistic world view.</p>
+					<Button primary="w-16 p-5 text-orange fill-orange bg-blue" second="p-5" />
+				</div>
+				<div class="space-y-6">
+					<div class="flex flex-row gap-4">
+						<Icon primary="w-10 text-blue hover:text-orange" path="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z" />
+						<div class="">
+							<h6 class="font-bold text-xl text-orange">MAIN OFFICE</h6>
+							<p class="font-ledger text-blue">49 Russell Square, London, UK</p>
+						</div>
+					</div>
+					<div class="flex flex-row gap-4">
+						<Icon primary="w-10 text-blue hover:text-orange" path="M21.75 9v.906a2.25 2.25 0 0 1-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 0 0 1.183 1.981l6.478 3.488m8.839 2.51-4.66-2.51m0 0-1.023-.55a2.25 2.25 0 0 0-2.134 0l-1.022.55m0 0-4.661 2.51m16.5 1.615a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V8.844a2.25 2.25 0 0 1 1.183-1.981l7.5-4.039a2.25 2.25 0 0 1 2.134 0l7.5 4.039a2.25 2.25 0 0 1 1.183 1.98V19.5Z" />
+						<div class="">
+							<h6 class="font-bold text-xl text-orange">MAIN OFFICE</h6>
+							<p class="font-ledger text-blue">info@justic.co.uk
+							<p class="font-ledger text-blue">office@justic.co.uk</p>
+						</div>
+					</div>
+					<div class="flex flex-row gap-4">
+						<Icon primary="w-10 text-blue hover:text-orange" path="M14.25 9.75v-4.5m0 4.5h4.5m-4.5 0 6-6m-3 18c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 0 1 4.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 0 0-.38 1.21 12.035 12.035 0 0 0 7.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 0 1 1.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 0 1-2.25 2.25h-2.25Z" />
+						<div class="">
+							<h6 class="font-bold text-xl text-orange">TELEPHONE</h6>
+							<p class="font-ledger text-blue">+1 800 643 4300</p>
+							<p class="font-ledger text-blue">+1 800 643 5899</p>
+						</div>
+					</div>
+					<div class="flex flex-row gap-4">
+						<Icon primary="w-10 text-blue hover:text-orange" path="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+						<div class="">
+							<h6 class="font-bold text-xl text-orange">WORKING HOURS</h6>
+							<p class="font-ledger text-blue">Mon-Sun: 8am – 8pm</p>
+						</div>
+					</div>
+				</div>
+				<div class="">
+					<h6 class="font-bold text-orange mb-5">REQUEST A FREE CONSULTATION</h6>
+					<form action="" class="space-y-4 *:outline-none">
+						<input type="text" placeholder="Name*" class="bg-gray-200 p-3 w-full">
+						<input type="text" placeholder="E-mail*" class="bg-gray-200 p-3 w-full">
+						<select id="" class="bg-gray-200 text-blue text-sm focus:ring-none focus:border-none block w-full p-2.5">
+							<option selected hidden>—Please choose an option—</option>
+							<option value="US">Family Law</option>
+							<option value="CA">Marriage Agreements</option>
+							<option value="FR">Financial Settlements</option>
+						</select>
+						<textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-blue bg-gray-200 rounded-lg outline-none focus:ring-0 focus:border-0" placeholder="Write your thoughts here..."></textarea>
+						<button type="button" class="bg-orange text-white font-bold px-6 py-3 tracking-widest uppercase hover:bg-transparent hover:text-orange hover:ring-2 hover:ring-orange transition-all ease-linear duration-500">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="relative overflow-hidden pt-12">
+			<div class="md:flex *:w-full *:md:h-screen">
+				<div class="relative">
+					<div class="md:absolute w-full bottom-0 left-24 z-10">
+						<Icon primary="bg-orange text-white p-5 absolute top-0 right-0 w-24" path="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 0 0 2.25-2.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v2.25A2.25 2.25 0 0 0 6 10.5Zm0 9.75h2.25A2.25 2.25 0 0 0 10.5 18v-2.25a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25V18A2.25 2.25 0 0 0 6 20.25Zm9.75-9.75H18a2.25 2.25 0 0 0 2.25-2.25V6A2.25 2.25 0 0 0 18 3.75h-2.25A2.25 2.25 0 0 0 13.5 6v2.25a2.25 2.25 0 0 0 2.25 2.25Z" />
+						<div class="bg-gray-50 mt-12 px-6 py-24 md:px-16 bg-gray-200 z-10 text-end">
+							<p class="font-bold text-orange">FIELDS OF EXPERTISE</p>
+							<h5 class="font-ledger text-3xl md:text-4xl">We Specialise In <br> All Aspects Of <span class="text-orange">Family Law</span></h5>
+							<div class="grid max-[450px]:grid-cols-1 grid-cols-2 gap-4 mt-12 *:flex *:flex-row *:items-end *:justify-end *:gap-4">
+								<div class="group">
+									<div class="flex flex-col items-end">
+										<p class="font-bold text-end">PRENUPTIAL <br>AGREEMENTS</p>
+										<Icon primary="w-6 transition-all ease-linear duration-500 group-hover:w-8 group-hover:text-orange" path="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+									</div>
+									<Icon primary="bg-orange text-white transition-all ease-linear duration-500 group-hover:bg-gray-50 group-hover:text-orange group-hover:ring-1 group-hover:ring-orange p-5 w-20" path="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+								</div>
+								<div class="group">
+									<div class="flex flex-col items-end">
+										<p class="font-bold text-end">
+											OUT OF COURT <br> SETTLEMENTS</p>
+										<Icon primary="w-6 transition-all ease-linear duration-500 group-hover:w-8 group-hover:text-orange" path="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+									</div>
+									<Icon primary="bg-orange text-white transition-all ease-linear duration-500 group-hover:bg-gray-50 group-hover:text-orange group-hover:ring-1 group-hover:ring-orange p-5 w-20" path="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+								</div>
+								<div class="group">
+									<div class="flex flex-col items-end">
+										<p class="font-bold text-end">
+											TRUSTS, WILL <br> AND PROBATE</p>
+										<Icon primary="w-6 transition-all ease-linear duration-500 group-hover:w-8 group-hover:text-orange" path="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+									</div>
+									<Icon primary="bg-orange text-white transition-all ease-linear duration-500 group-hover:bg-gray-50 group-hover:text-orange group-hover:ring-1 group-hover:ring-orange p-5 w-20" path="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" />
+								</div>
+								<div class="group">
+									<div class="flex flex-col items-end">
+										<p class="font-bold text-end">
+											CIVIL PARTNERSHIPS
+										</p>
+										<Icon primary="w-6 transition-all ease-linear duration-500 group-hover:w-8 group-hover:text-orange" path="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+									</div>
+									<Icon primary="bg-orange text-white transition-all ease-linear duration-500 group-hover:bg-gray-50 group-hover:text-orange group-hover:ring-1 group-hover:ring-orange p-5 w-20" path="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="relative object-cover object-center h-screen w-full" style={`background-image: url('${justic2.src}')`}></div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="relative overflow-hidden pb-12">
+			<div class="md:flex *:md:min-h-screen *:w-full">
+				<div class="relative">
+					<div class="relative md:absolute w-full bottom-0 py-12 md:px-16 bg-gray-50 z-10">
+						<Icon primary="bg-orange text-white p-5 absolute top-0 left-0 w-24" path="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+						<div class="flex flex-row justify-between items-center mt-12">
+							<h5 class="font-ledger text-3xl md:text-4xl">Meet <span class="text-orange">The Team</span></h5>
+							<div class="relative flex items-center py-5 w-1/3 group group-hover:w-0 transition-all duration-500 ease-linear">
+								<div class="flex-grow border border-t border-orange group-hover:border-blue transition-all duration-500 ease-linear"></div>
+								<a href="/about" class="flex-shrink mx-4 font-bold text-orange group-hover:text-blue">VIEW MORE</a>
+							</div>
+						</div>
+						<div class="flex flex-col sm:flex-row gap-6 mt-12">
+							<Teamcard name="Christopher Mix" position="Founder and CEO" image={justic4} />
+							<Teamcard name="Roberta Lawrence" position="Co-Founder and attorney" image={justic5} />
+						</div>
+					</div>
+				</div>
+				<div class="md:order-first md:-me-24 relative bg-cover bg-center min-h-screen" style={`background-image: url('${justic3.src}')`}></div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="container px-6 py-20 relative mx-auto">
+			<div class="text-center max-w-screen-md mx-auto">
+				<h4 class="text-3xl md:text-4xl font-ledger text-blue">The virtue of <span class="text-orange">justice</span> consists in <span class="text-orange">moderation</span>, as regulated by <span class="text-orange">wisdom.</span></h4>
+				<p class="text-xl text-orange mt-5">ARISTOTLE</p>
+			</div>
+			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-12">
+				<div class="bg-blue">
+					<Image src={justic6} alt="justic" class="aspect-video object-center object-cover"/>
+					<div class="text-white relative">
+						<div class="bg-blue -translate-y-16 ml-12">
+							<Icon primary="w-16 bg-orange p-2 text-white" path="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" />
+						</div>
+						<div class="-translate-y-6 bg-blue px-8 pb-6">
+							<h6 class="font-ledger text-3xl mb-2 hover:text-orange">Financial <span class="text-orange">Settlements</span></h6>
+							<p class="text-md">Leverage agile frameworks to provide a robust synopsis for high level iterative approaches to corporate strategy.</p>
+						</div>
+					</div>
+				</div>
+				<div class="bg-blue">
+					<Image src={justic7} alt="justic" class="aspect-video object-center object-cover"/>
+					<div class="text-white relative">
+						<div class="bg-blue -translate-y-16 ml-12">
+							<Icon primary="w-16 bg-orange p-2 text-white" path="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+						</div>
+						<div class="-translate-y-6 bg-blue px-8 pb-6">
+							<h6 class="font-ledger text-3xl mb-2 hover:text-orange">Family  <span class="text-orange">Law</span></h6>
+							<p class="text-md">Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
+						</div>
+					</div>
+				</div>
+				<div class="bg-blue">
+					<Image src={justic8} alt="justic" class="aspect-video object-center object-cover"/>
+					<div class="text-white relative">
+						<div class="bg-blue -translate-y-16 ml-12">
+							<Icon primary="w-16 bg-orange p-2 text-white" path="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+						</div>
+						<div class="-translate-y-6 bg-blue px-8 pb-6">
+							<h6 class="font-ledger text-3xl mb-2 hover:text-orange">Marriage  <span class="text-orange">Agreements</span></h6>
+							<p class="text-md">Bring to the table win-win survival strategies to ensure proactive work. At the end of the day, going forward.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="relative overflow-hidden pt-12">
+			<div class="flex flex-col md:flex-row *:w-full">
+				<div class="relative md:h-screen">
+					<div class="md:absolute w-full bottom-0 -right-24 px-6 py-12 md:px-16 bg-gray-50 z-10 text-end">
+                        <Icon primary="bg-orange text-white p-5 absolute top-0 right-0 w-24" path="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
+						<h5 class="font-ledger text-3xl md:text-4xl mt-36">Expertise In All Aspects Of Divorce</h5>
+						<ul class="flex flex-col gap-2 items-end mt-12 font-bold transition-all ease-linear duration-500 mb-12">
+							<li class="group flex gap-2 items-center justify-center text-orange hover:text-gray-950 transition-all ease-linear duration-500">CHILD ARRANGEMENT ORDERS
+								<Icon primary="w-8 text-orange group-hover:text-gray-950" path="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+							</li>
+							<li class="group flex gap-2 items-center justify-center hover:text-orange text-gray-950 transition-all ease-linear duration-500">OUT OF COURT SETTLEMENTS
+								<Icon primary="w-8 group-hover:text-orange text-gray-950" path="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+							</li>
+							<li class="group flex gap-2 items-center justify-center hover:text-orange text-gray-950 transition-all ease-linear duration-500">HIGH NET WORTH INDIVIDUALS
+								<Icon primary="w-8 group-hover:text-orange text-gray-950" path="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+							</li>
+							<li class="group flex gap-2 items-center justify-center hover:text-orange text-gray-950 transition-all ease-linear duration-500">INTERNATIONAL DIVORCE CASES
+								<Icon primary="w-8 group-hover:text-orange text-gray-950" path="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+							</li>
+							<li class="group flex gap-2 items-center justify-center hover:text-orange text-gray-950 transition-all ease-linear duration-500">FAMILY BUSINESSES & SELF-EMPLOYED
+								<Icon primary="w-8 group-hover:text-orange text-gray-950" path="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+							</li>
+							<li class="group flex gap-2 items-center justify-center hover:text-orange text-gray-950 transition-all ease-linear duration-500">CIVIL PARTNERSHIPS
+								<Icon primary="w-8 group-hover:text-orange text-gray-950" path="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="relative bg-cover bg-center h-screen w-full" style={`background-image: url('${justic9.src}')`}></div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="relative overflow-hidden">
+			<div class="flex flex-col lg:flex-row *:w-full">
+				<div class="relative flex items-end md:min-h-screen">
+					<div class="relative -right-24 w-full px-6 py-12 bg-gray-50 z-10">
+                        <Icon primary="bg-orange text-white p-5 absolute top-0 left-0 w-24" path="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+						<div class="flex flex-row justify-between items-center mt-24 mx-12">
+							<h5 class="font-ledger text-3xl text-orange">TESTIMONIALS</h5>
+						</div>
+						<div class="flex flex-col sm:flex-row gap-4 mt-12 mx-12 *:p-2">
+							<div class="">
+								<p class="font-ledger mb-4">The level of service I received from GoldenBlatt Law was incredible, through a particularly difficult chapter. They are exceptional.</p>
+								<Image src={justic11} alt="justic" class="object-cover object-center w-16 h-16" />
+								<p class="text-orange font-bold mt-2">ROBERT JONES</p>
+								<p>Client</p>
+							</div>
+							<div class="bg-gray-100">
+								<p class="font-ledger mb-4">As far as this work was concerned, I can say that my wife and I have been extremely impressed with the efficiency and professionalism.</p>
+								<Image src={justic12} alt="justic" class="object-cover object-center w-16 h-16" />
+								<p class="text-orange font-bold mt-2">JHON DOE</p>
+								<p>Client</p>
+							</div>
+							<div class="">
+								<p class="font-ledger mb-4">Their knowledge, expertise, advice and confidence gave me courage, belief and strength needed to help me go through my divorce.</p>
+								<Image src={justic13} alt="justic" class="object-cover object-center w-16 h-16" />
+								<p class="text-orange font-bold mt-2">ALEX MORGAN</p>
+								<p>Client</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="grid grid-cols-2 items-center justify-center lg:order-first lg:-me-48 w-full relative bg-cover bg-center min-h-screen *:flex *:flex-col *:items-center *:justify-center *:gap-4 *:w-full *:h-full *:text-white *:border-orange-200 *:p-12" style={`background-image: url('${justic10.src}')`}>
+					<div class="border-b border-r">
+						<Icon primary="w-16 text-orange" path="M5.25 14.25h13.5m-13.5 0a3 3 0 0 1-3-3m3 3a3 3 0 1 0 0 6h13.5a3 3 0 1 0 0-6m-16.5-3a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3m-19.5 0a4.5 4.5 0 0 1 .9-2.7L5.737 5.1a3.375 3.375 0 0 1 2.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 0 1 .9 2.7m0 0a3 3 0 0 1-3 3m0 3h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Zm-3 6h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Z" />
+						<h6 class="font-ledger text-5xl">5678</h6>
+						<p>SOLVED CASES</p>
+					</div>
+					<div class="border-b">
+						<Icon primary="w-16 text-orange" path="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z" />
+						<h6 class="font-ledger text-5xl">25</h6>
+						<p>PARTNERS</p>
+					</div>
+					<div class="border-r">
+						<Icon primary="w-16 text-orange" path="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0 0 12 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 0 1-2.031.352 5.988 5.988 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971Zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 0 1-2.031.352 5.989 5.989 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971Z" />
+						<h6 class="font-ledger text-5xl">20</h6>
+						<p>STAFF MEMBERS</p>
+					</div>
+					<div class="">
+						<Icon primary="w-16 text-orange" path="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 0 1-.982-3.172M9.497 14.25a7.454 7.454 0 0 0 .981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 0 0 7.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 0 0 2.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 0 1 2.916.52 6.003 6.003 0 0 1-5.395 4.972m0 0a6.726 6.726 0 0 1-2.749 1.35m0 0a6.772 6.772 0 0 1-3.044 0" />
+						<h6 class="font-ledger text-5xl">10</h6>
+						<p>TOP 10 LAW FIRMS</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="relative bg-center bg-cover bg-fixed before:content-[''] before:absolute before:w-full before:h-full before:bg-gradient-to-r before:from-black before:via-black/80 before:to-transparent" style={`background-image: url('${justic14.src}')`}>
+		<div class="container px-6 mx-auto relative">
+			<div class="h-[50vh] flex flex-col md:flex-row justify-center md:justify-between items-center gap-y-12">
+				<h6 class="font-ledger text-white text-3xl md:text-5xl">Contact <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-orange relative inline-block"><span class="relative text-white">Justic</span></span> Family Law</h6>
+                <Button primary="w-16 p-5 text-orange fill-orange bg-gray-200" second="p-5" />
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="container px-6 py-12 mx-auto">
+			<div class="flex flex-row justify-between items-center *:w-full">
+				<h5 class="font-ledger text-3xl md:text-4xl text-orange">Latest News  <span class="text-gray-950">and Updates</span></h5>
+				<div class="relative flex items-center justify-end py-5 mt-6 group group-hover:w-0 transition-all duration-500 ease-linear">
+					<div class="w-16 md:w-24 border border-t border-orange group-hover:border-blue transition-all duration-500 ease-linear"></div>
+					<span class="flex-shrink mx-4 font-bold text-orange group-hover:text-blue">VIEW MORE</span>
+				</div>
+			</div>
+			<div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8 mt-12">
+				{formatPosts
+				.slice(0, 3)
+				.map((post: BlogPost) => (
+				<div class="shadow-xl">
+				  <Postcard frontmatter={post.frontmatter} url={post.url} />    
+				</div>
+				))}
+			  </div>
+		</div>
+	</section>
+	<section>
+		<div class="relative overflow-hidden mt-12">
+			<div class="flex flex-col md:flex-row *:w-full">
+				<div class="relative flex items-end md:min-h-screen">
+					<div class="relative w-full md:right-24 px-6 py-12 lg:px-16 bg-gray-50 z-10">
+                        <Icon primary="bg-orange text-white p-5 absolute top-0 left-0 w-24" path="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" />
+						<p class="font-bold text-orange mt-36">CONTACT AND LOCATION</p>
+						<h5 class="font-ledger text-3xl md:text-4xl">We are here for you <br><span class="text-orange">24 hours a day, 7 days a week</span>
+						</h5>
+						<div class="grid max-[450px]:grid-cols-1 grid-cols-2 gap-4 mt-12 mb-24 *:flex *:flex-row *:gap-4">
+							<div class="group">
+								<Icon
+									primary="bg-orange text-white transition-all ease-linear duration-500 group-hover:bg-gray-50 group-hover:text-orange group-hover:ring-1 group-hover:ring-orange p-2 w-12"
+									path="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
+									/>
+								<div class="flex flex-col gap-2">
+									<p class="font-bold font-ledger">PHONE:</p>
+									<p class="font-ledger">1 800 643 4300</p>
+								</div>
+							</div>
+							<div class="group">
+								<Icon
+									primary="bg-orange text-white transition-all ease-linear duration-500 group-hover:bg-gray-50 group-hover:text-orange group-hover:ring-1 group-hover:ring-orange p-2 w-12"
+									path="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+									/>
+								<div class="flex flex-col gap-2">
+									<p class="font-bold font-ledger">ADDRESS:</p>
+									<p class="font-ledger">49 Russell, London</p>
+								</div>
+							</div>
+							<div class="group">
+								<Icon
+									primary="bg-orange text-white transition-all ease-linear duration-500 group-hover:bg-gray-50 group-hover:text-orange group-hover:ring-1 group-hover:ring-orange p-2 w-12"
+									path="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+									/>
+								<div class="flex flex-col gap-2">
+									<p class="font-bold font-ledger">HOURS:</p>
+									<p class="font-ledger">Mon-Sun: 8am – 8pm</p>
+								</div>
+							</div>
+							<div class="group">
+								<Icon
+									primary="bg-orange text-white transition-all ease-linear duration-500 group-hover:bg-gray-50 group-hover:text-orange group-hover:ring-1 group-hover:ring-orange p-2 w-12"
+									path="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+									/>
+								<div class="flex flex-col gap-2">
+									<p class="font-bold font-ledger">EMAIL:</p>
+									<p class="font-ledger">info@justic.co.uk</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="md:order-first relative bg-cover bg-center h-screen">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.730473277063!2d-0.12849222412215372!3d51.51816060991805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b33ade384ab%3A0x42f1e8b89b74167a!2s49%20Great%20Russell%20St%2C%20London%20WC1B%203BA%2C%20Britania%20Raya!5e0!3m2!1sid!2sid!4v1734318950295!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+			</div>
+		</div>
+	</section>
+</Home>

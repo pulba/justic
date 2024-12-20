@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets"
+import Sosmed from "./sosmed.astro"
+
+const {name, position, image} = Astro.props
+---
+
+
+<div class="font-ledger">
+    <div class="relative overflow-hidden">
+        <Image src={image} alt="justic" class="aspect-square object-cover object-center w-full h-full hover:scale-110 hover:grayscale transition-all ease-linear duration-500" />
+    </div>
+    <h6 class="text-2xl mt-4">{name}</h6>
+    <p>{position}</p>
+    <Sosmed />
+</div>

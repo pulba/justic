@@ -1,0 +1,13 @@
+---
+import Footer from "../components/footer.astro";
+import Navbar from "../components/navbar.astro";
+import Main from "./main.astro";
+
+
+---
+
+<Main>
+    <Navbar />
+        <slot />
+    <Footer />
+</Main>

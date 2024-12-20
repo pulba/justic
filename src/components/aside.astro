@@ -1,0 +1,50 @@
+---
+import { formatBlogPosts, formatDate } from "../utils/helpers";
+import { Image } from "astro:assets";
+import Icon from "./icon.astro";
+interface BlogPost {
+  frontmatter: {
+    title: string;
+    date: string;
+    [key: string]: any;
+  };
+  url: string;
+}
+const matches = await import.meta.glob('../pages/posts/*.md', { eager: true });
+const posts = Object.values(matches);
+const formatPosts: BlogPost[] = formatBlogPosts(posts);
+---
+
+<div class="w-full md:w-1/3 p-2">
+    <h3 class="text-xl font-bold text-orange mb-5">POPULAR POSTS</h3>
+      <div class="w-full space-y-4">
+          {formatPosts
+          .slice(0, 5)
+          .map((post: BlogPost) => (
+          <div class="flex gap-2">
+            <a href={post.url}>
+
+              <Image
+              src={post.frontmatter.image.src}
+              width="200"
+              height="500"
+              alt={post.frontmatter.image.alt}
+              format="webp"
+              class="w-28 h-20 rounded-md"
+              />
+            </a>
+              <div class="space-y-2">
+                    <a href={post.url}>
+                    <h5 class="font-bold text-blue capitalize hover:text-orange">{post.frontmatter.title}</h5>
+                    </a>
+                  <p class="flex gap-3 items-end text-gray-500 text-sm">
+                  <span class="flex gap-1 items-center justify-center">
+                      <Icon primary="w-4" path="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                      {formatDate(post.frontmatter.date)}
+                  </span>
+                </p>
+              </div>
+          </div>
+          ))}
+        </div>
+</div>

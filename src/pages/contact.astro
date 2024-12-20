@@ -1,0 +1,102 @@
+---
+import Page from "../layouts/page.astro";
+import Icon from "../components/icon.astro";
+import Button from "../components/button.astro";
+import cover from "../assets/justic23.webp"
+---
+
+<Page title="Contact and Location">
+    <section>
+        <div class="mx-auto">
+            <div class="flex flex-col lg:flex-row *:w-full lg:*:min-h-screen">
+				<div class="relative lg:-me-24 z-20 bg-gray-50 px-12 py-24 flex flex-col items-end text-end space-y-8 lg:space-y-12">
+                    <Icon primary="bg-orange text-white p-5 absolute top-0 right-0 w-24" path="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+					<p class="font-bold text-orange">CONTACT JUSTIC FAMILY LAW</p>
+					<h4 class="font-ledger text-blue text-4xl md:text-4xl">Call us today, leave a message, email or find your nearest office below.</h4>
+					<Button primary="w-16 p-5 text-orange fill-orange bg-blue" second="p-5" />
+				</div>
+                <div class="relative lg:-mt-24 bg-center bg-cover flex justify-center items-center px-12 sm:px-36 before:content-[''] before:absolute before:w-full before:h-full before:bg-black/70" style={`background-image: url('${cover.src}')`}>
+					<div class="relative w-full max-w-4xl mx-auto py-10 mx-auto overflow-hidden rounded-lg shadow-2xl shadow-gray-300/50">
+                        <h1 class="px-6 text-xl font-bold text-orange">GET A FREE CALLBACK
+                        </h1>
+                        <form class="mt-6">
+                            <div class="flex-1">
+                                <input type="text" placeholder="Name*" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white focus:outline-none focus:ring-none" />
+                            </div>
+    
+                            <div class="flex-1 mt-6">
+                                <input type="email" placeholder="Email*" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white focus:outline-none focus:ring-none" />
+                            </div>
+    
+                            <div class="w-full mt-6">
+                                <textarea class="block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 md:h-48 focus:outline-none focus:ring-none" placeholder="Detail*"></textarea>
+                            </div>
+                            <button class="w-max px-8 py-3 mt-6 text-sm font-bold tracking-wide text-white bg-orange capitalize transition-colors duration-300 transform bg-blue-500 hover:bg-blue focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+                                SUBMIT
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	<section>
+		<div class="relative overflow-hidden">
+			<div class="flex flex-col md:flex-row *:w-full">
+				<div class="relative flex items-end md:min-h-screen">
+					<div class="relative w-full md:right-24 px-6 py-12 lg:px-16 bg-gray-50 z-10">
+                        <Icon primary="bg-orange text-white p-5 absolute top-0 left-0 w-24" path="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" />
+						<p class="font-bold text-orange mt-36">CONTACT AND LOCATION</p>
+						<h5 class="font-ledger text-3xl md:text-4xl">We are here for you <br><span class="text-orange">24 hours a day, 7 days a week</span>
+						</h5>
+						<div class="grid max-[450px]:grid-cols-1 grid-cols-2 gap-4 mt-12 mb-24 *:flex *:flex-row *:gap-4">
+							<div class="group">
+								<Icon
+									primary="bg-orange text-white transition-all ease-linear duration-500 group-hover:bg-gray-50 group-hover:text-orange group-hover:ring-1 group-hover:ring-orange p-2 w-12"
+									path="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
+									/>
+								<div class="flex flex-col gap-2">
+									<p class="font-bold font-ledger">PHONE:</p>
+									<p class="font-ledger">1 800 643 4300</p>
+								</div>
+							</div>
+							<div class="group">
+								<Icon
+									primary="bg-orange text-white transition-all ease-linear duration-500 group-hover:bg-gray-50 group-hover:text-orange group-hover:ring-1 group-hover:ring-orange p-2 w-12"
+									path="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+									/>
+								<div class="flex flex-col gap-2">
+									<p class="font-bold font-ledger">ADDRESS:</p>
+									<p class="font-ledger">49 Russell, London</p>
+								</div>
+							</div>
+							<div class="group">
+								<Icon
+									primary="bg-orange text-white transition-all ease-linear duration-500 group-hover:bg-gray-50 group-hover:text-orange group-hover:ring-1 group-hover:ring-orange p-2 w-12"
+									path="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+									/>
+								<div class="flex flex-col gap-2">
+									<p class="font-bold font-ledger">HOURS:</p>
+									<p class="font-ledger">Mon-Sun: 8am – 8pm</p>
+								</div>
+							</div>
+							<div class="group">
+								<Icon
+									primary="bg-orange text-white transition-all ease-linear duration-500 group-hover:bg-gray-50 group-hover:text-orange group-hover:ring-1 group-hover:ring-orange p-2 w-12"
+									path="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+									/>
+								<div class="flex flex-col gap-2">
+									<p class="font-bold font-ledger">EMAIL:</p>
+									<p class="font-ledger">info@justic.co.uk</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="md:order-first relative bg-cover bg-center h-screen">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.730473277063!2d-0.12849222412215372!3d51.51816060991805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b33ade384ab%3A0x42f1e8b89b74167a!2s49%20Great%20Russell%20St%2C%20London%20WC1B%203BA%2C%20Britania%20Raya!5e0!3m2!1sid!2sid!4v1734318950295!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+			</div>
+		</div>
+	</section>
+</Page>

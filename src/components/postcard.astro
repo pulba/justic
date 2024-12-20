@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+import { slugify, formatDate } from "../utils/helpers";
+const { frontmatter, url } = Astro.props;
+const { title, date, author, image, description, categories} = frontmatter; 
+---
+
+
+
+<div class="relative">
+    <a href={url}>
+        <Image
+          src={image.src}
+          width="1600"
+          height="300"
+          alt={image.alt}
+          format="webp"
+          class="aspect-video"
+        />
+      </a>
+      <div class="absolute bottom-0 left-12 flex gap-4 bg-white">
+        <p class="bg-orange p-2 font-ledger text-lg text-white text-center w-max">
+            {formatDate(date)}
+          </p>
+        <a href={url}>
+          <h4 class="font-ledger text-xl capitalize hover:text-orange p-2">
+            {title}
+          </h4>
+        </a>
+      </div>
+</div>
